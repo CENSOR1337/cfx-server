@@ -5,12 +5,15 @@ import { Citizen } from "@cfx/shared";
 import cfx from "@cfx/shared";
 
 export class Events extends SharedEvents {
-	public static onClient(eventName: string, handler: listenerType): SharedEvent {
-		return new SharedEvent(eventName, handler, false, false);
+	public static onClient(eventName: string, listener: clientListenerType, once = false): SharedEvent {
+		const handler = (source: number, ...args: any[]) => {
+			listener(source, ...SharedEvent.getClassFromArguments(...args));
+		};
+		return new SharedEvent(eventName, handler, true, once);
 	}
 
-	public static onceClient(eventName: string, handler: listenerType): SharedEvent {
-		return new SharedEvent(eventName, handler, false, true);
+	public static onceClient(eventName: string, listener: clientListenerType): SharedEvent {
+		return Events.onClient(eventName, listener, true);
 	}
 
 	public static emitClient = Citizen.triggerClientEvent;
