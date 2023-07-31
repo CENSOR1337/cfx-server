@@ -1,3 +1,3 @@
 export * from "@cfx/shared";
 export * from "./serverNatives";
-export { Events } from "./Events";
+export { ServerEvent as Event, EventContext } from "./Event";
