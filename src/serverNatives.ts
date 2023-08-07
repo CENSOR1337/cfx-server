@@ -169,7 +169,7 @@ export function addBlipForRadius(posX: number, posY: number, posZ: number, radiu
  * @param collection
  * @param overlay
  */
-export function addPedDecorationFromHashes(ped: number, collection: number, overlay: number): any { 
+export function addPedDecorationFromHashes(ped: number, collection: number, overlay: number): void { 
 	return _in(0x00000000, 0x70559ac7, ped, collection, overlay); 
 }
 
@@ -207,7 +207,7 @@ export function addPedDecorationFromHashes(ped: number, collection: number, over
  * @param p12
  * @param p13
  */
-export function applyForceToEntity(entity: number, forceType: number, x: number, y: number, z: number, offX: number, offY: number, offZ: number, boneIndex: number, isDirectionRel: boolean, ignoreUpVec: boolean, isForceRel: boolean, p12: boolean, p13: boolean): any { 
+export function applyForceToEntity(entity: number, forceType: number, x: number, y: number, z: number, offX: number, offY: number, offZ: number, boneIndex: number, isDirectionRel: boolean, ignoreUpVec: boolean, isForceRel: boolean, p12: boolean, p13: boolean): void { 
 	return _in(0x00000000, 0xc1c0855a, entity, forceType, _fv(x), _fv(y), _fv(z), _fv(offX), _fv(offY), _fv(offZ), boneIndex, isDirectionRel, ignoreUpVec, isForceRel, p12, p13); 
 }
 
@@ -227,7 +227,7 @@ export function canPlayerStartCommerceSession(playerSrc: string): boolean {
  * @param ped
  * @param propId
  */
-export function clearPedProp(ped: number, propId: number): any { 
+export function clearPedProp(ped: number, propId: number): void { 
 	return _in(0x00000000, 0x2d23d743, ped, propId); 
 }
 
@@ -235,7 +235,7 @@ export function clearPedProp(ped: number, propId: number): any {
  * **This is the server-side RPC native equivalent of the client native [CLEAR_PED_SECONDARY_TASK](?\_0x176CECF6F920D707).**
  * @param ped
  */
-export function clearPedSecondaryTask(ped: number): any { 
+export function clearPedSecondaryTask(ped: number): void { 
 	return _in(0x00000000, 0xa635f451, ped); 
 }
 
@@ -245,7 +245,7 @@ export function clearPedSecondaryTask(ped: number): any {
  * **This is the server-side RPC native equivalent of the client native [CLEAR_PED_TASKS](?\_0xE1EF3C1216AFF2CD).**
  * @param ped
  */
-export function clearPedTasks(ped: number): any { 
+export function clearPedTasks(ped: number): void { 
 	return _in(0x00000000, 0xde3316ab, ped); 
 }
 
@@ -255,7 +255,7 @@ export function clearPedTasks(ped: number): any {
  * **This is the server-side RPC native equivalent of the client native [CLEAR_PED_TASKS_IMMEDIATELY](?\_0xAAA34F8A7CB32098).**
  * @param ped
  */
-export function clearPedTasksImmediately(ped: number): any { 
+export function clearPedTasksImmediately(ped: number): void { 
 	return _in(0x00000000, 0xbc045625, ped); 
 }
 
@@ -266,7 +266,7 @@ export function clearPedTasksImmediately(ped: number): any {
  * **This is the server-side RPC native equivalent of the client native [CLEAR_PLAYER_WANTED_LEVEL](?\_0xB302540597885499).**
  * @param player
  */
-export function clearPlayerWantedLevel(player: number): any { 
+export function clearPlayerWantedLevel(player: number): void { 
 	return _in(0x00000000, 0x54ea5bcc, player); 
 }
 
@@ -377,7 +377,7 @@ export function createVehicleServerSetter(modelHash: number, type: string, x: nu
  * Deletes the specified entity.
  * @param entity
  */
-export function deleteEntity(entity: number): any { 
+export function deleteEntity(entity: number): void { 
 	return _in(0x00000000, 0xfaa3d236, entity); 
 }
 
@@ -385,11 +385,11 @@ export function deleteEntity(entity: number): any {
  * Nonsynchronous [DELETE_RESOURCE_KVP](#\_0x7389B5DF) operation; see [FLUSH_RESOURCE_KVP](#\_0x5240DA5A).
  * @param key
  */
-export function deleteResourceKvpNoSync(key: string): any { 
+export function deleteResourceKvpNoSync(key: string): void { 
 	return _in(0x00000000, 0x04152c90, _ts(key)); 
 }
 
-export function doesEntityExist(entity: number): boolean { 
+export function doesEntityExist(entity: any): boolean { 
 	return _in(0x00000000, 0x3ac90869, entity, _r); 
 }
 
@@ -411,15 +411,15 @@ export function doesPlayerOwnSkuExt(playerSrc: string, skuId: number): boolean {
 	return _in(0x00000000, 0xdef0480b, _ts(playerSrc), skuId, _r); 
 }
 
-export function dropPlayer(playerSrc: string, reason: string): any { 
+export function dropPlayer(playerSrc: string, reason: string): void { 
 	return _in(0x00000000, 0xba0613e1, _ts(playerSrc), _ts(reason)); 
 }
 
-export function enableEnhancedHostSupport(enabled: boolean): any { 
+export function enableEnhancedHostSupport(enabled: boolean): void { 
 	return _in(0x00000000, 0xf97b1c93, enabled); 
 }
 
-export function flagServerAsPrivate(private_: boolean): any { 
+export function flagServerAsPrivate(private_: boolean): void { 
 	return _in(0x00000000, 0x13b6855d, private_); 
 }
 
@@ -428,7 +428,7 @@ export function flagServerAsPrivate(private_: boolean): any {
  * 
  * This native ensures all `_NO_SYNC` operations are synchronized with the disk/filesystem.
  */
-export function flushResourceKvp(): any { 
+export function flushResourceKvp(): void { 
 	return _in(0x00000000, 0xe27c97a0); 
 }
 
@@ -439,7 +439,7 @@ export function flushResourceKvp(): any {
  * @param entity
  * @param toggle
  */
-export function freezeEntityPosition(entity: number, toggle: boolean): any { 
+export function freezeEntityPosition(entity: number, toggle: boolean): void { 
 	return _in(0x00000000, 0x65c16d57, entity, toggle); 
 }
 
@@ -455,8 +455,8 @@ export function getAirDragMultiplierForPlayersVehicle(playerSrc: string): number
  * [127, 42, 13, 37]
  * ```
  */
-export function getAllObjects(): number { 
-	return _in(0x00000000, 0x6886c3fe, _r, _ri); 
+export function getAllObjects(): any { 
+	return _in(0x00000000, 0x6886c3fe, _r, _ro); 
 }
 
 /**
@@ -467,8 +467,8 @@ export function getAllObjects(): number {
  * [127, 42, 13, 37]
  * ```
  */
-export function getAllPeds(): number { 
-	return _in(0x00000000, 0xb8584fef, _r, _ri); 
+export function getAllPeds(): any { 
+	return _in(0x00000000, 0xb8584fef, _r, _ro); 
 }
 
 /**
@@ -479,8 +479,8 @@ export function getAllPeds(): number {
  * [127, 42, 13, 37]
  * ```
  */
-export function getAllVehicles(): number { 
-	return _in(0x00000000, 0x332169f5, _r, _ri); 
+export function getAllVehicles(): any { 
+	return _in(0x00000000, 0x332169f5, _r, _ro); 
 }
 
 /**
@@ -894,24 +894,24 @@ export function getVehicleBodyHealth(vehicle: number): number {
 	return _in(0x00000000, 0x2b2fcc28, vehicle, _r, _rf); 
 }
 
-export function getVehicleColours(vehicle: number): [any, number, any] { 
-	const [retval, colorPrimary_out, colorSecondary_out] = _in(0x00000000, 0x40d82d88, vehicle, _i, _i, _r, _ri);
-	return [retval as any, colorPrimary_out as number, colorSecondary_out as number]; 
+export function getVehicleColours(vehicle: number): [number, number] { 
+	const [colorPrimary_out, colorSecondary_out] = _in(0x00000000, 0x40d82d88, vehicle, _i, _i);
+	return [colorPrimary_out as number, colorSecondary_out as number]; 
 }
 
-export function getVehicleCustomPrimaryColour(vehicle: number): [any, number, number, any] { 
-	const [retval, r_out, g_out, b_out] = _in(0x00000000, 0x1c2b9fef, vehicle, _i, _i, _i, _r, _ri);
-	return [retval as any, r_out as number, g_out as number, b_out as number]; 
+export function getVehicleCustomPrimaryColour(vehicle: number): [number, number, number] { 
+	const [r_out, g_out, b_out] = _in(0x00000000, 0x1c2b9fef, vehicle, _i, _i, _i);
+	return [r_out as number, g_out as number, b_out as number]; 
 }
 
-export function getVehicleCustomSecondaryColour(vehicle: number): [any, number, number, any] { 
-	const [retval, r_out, g_out, b_out] = _in(0x00000000, 0x3ff247a2, vehicle, _i, _i, _i, _r, _ri);
-	return [retval as any, r_out as number, g_out as number, b_out as number]; 
+export function getVehicleCustomSecondaryColour(vehicle: number): [number, number, number] { 
+	const [r_out, g_out, b_out] = _in(0x00000000, 0x3ff247a2, vehicle, _i, _i, _i);
+	return [r_out as number, g_out as number, b_out as number]; 
 }
 
-export function getVehicleDashboardColour(vehicle: number, color: number): [any, any] { 
-	const [retval, color_out] = _in(0x00000000, 0xa0dbd08d, vehicle, _ii(color), _r, _ri);
-	return [retval as any, color_out as number]; 
+export function getVehicleDashboardColour(vehicle: number, color: number): [number] { 
+	const [color_out] = _in(0x00000000, 0xa0dbd08d, vehicle, _ii(color));
+	return [color_out as number]; 
 }
 
 export function getVehicleDirtLevel(vehicle: number): number { 
@@ -956,9 +956,9 @@ export function getVehicleEngineHealth(vehicle: number): number {
 	return _in(0x00000000, 0x8880038a, vehicle, _r, _rf); 
 }
 
-export function getVehicleExtraColours(vehicle: number): [any, number, any] { 
-	const [retval, pearlescentColor_out, wheelColor_out] = _in(0x00000000, 0x80e4659b, vehicle, _i, _i, _r, _ri);
-	return [retval as any, pearlescentColor_out as number, wheelColor_out as number]; 
+export function getVehicleExtraColours(vehicle: number): [number, number] { 
+	const [pearlescentColor_out, wheelColor_out] = _in(0x00000000, 0x80e4659b, vehicle, _i, _i);
+	return [pearlescentColor_out as number, wheelColor_out as number]; 
 }
 
 /**
@@ -981,14 +981,14 @@ export function getVehicleHomingLockonState(vehicle: number): number {
 	return _in(0x00000000, 0xfbde9fd8, vehicle, _r, _ri); 
 }
 
-export function getVehicleInteriorColour(vehicle: number, color: number): [any, any] { 
-	const [retval, color_out] = _in(0x00000000, 0xccff3b6e, vehicle, _ii(color), _r, _ri);
-	return [retval as any, color_out as number]; 
+export function getVehicleInteriorColour(vehicle: number, color: number): [number] { 
+	const [color_out] = _in(0x00000000, 0xccff3b6e, vehicle, _ii(color));
+	return [color_out as number]; 
 }
 
-export function getVehicleLightsState(vehicle: number): [any, boolean, any] { 
-	const [retval, lightsOn_out, highbeamsOn_out] = _in(0x00000000, 0x7c278621, vehicle, _i, _i, _r, _ri);
-	return [retval as any, lightsOn_out as boolean, highbeamsOn_out as boolean]; 
+export function getVehicleLightsState(vehicle: number): [boolean, boolean, boolean] { 
+	const [retval, lightsOn_out, highbeamsOn_out] = _in(0x00000000, 0x7c278621, vehicle, _i, _i, _r);
+	return [retval as boolean, lightsOn_out as boolean, highbeamsOn_out as boolean]; 
 }
 
 export function getVehicleLivery(vehicle: number): number { 
@@ -1051,9 +1051,9 @@ export function getVehicleType(vehicle: number): string {
 	return _in(0x00000000, 0xa273060e, vehicle, _r, _s); 
 }
 
-export function getVehicleTyreSmokeColor(vehicle: number): [any, number, number, any] { 
-	const [retval, r_out, g_out, b_out] = _in(0x00000000, 0x75280015, vehicle, _i, _i, _i, _r, _ri);
-	return [retval as any, r_out as number, g_out as number, b_out as number]; 
+export function getVehicleTyreSmokeColor(vehicle: number): [number, number, number] { 
+	const [r_out, g_out, b_out] = _in(0x00000000, 0x75280015, vehicle, _i, _i, _i);
+	return [r_out as number, g_out as number, b_out as number]; 
 }
 
 export function getVehicleWheelType(vehicle: number): number { 
@@ -1070,7 +1070,7 @@ export function getVehicleWindowTint(vehicle: number): number {
  * @param weaponHash
  * @param componentHash
  */
-export function giveWeaponComponentToPed(ped: number, weaponHash: number, componentHash: number): any { 
+export function giveWeaponComponentToPed(ped: number, weaponHash: number, componentHash: number): void { 
 	return _in(0x00000000, 0x3e1e286d, ped, weaponHash, componentHash); 
 }
 
@@ -1082,7 +1082,7 @@ export function giveWeaponComponentToPed(ped: number, weaponHash: number, compon
  * @param isHidden
  * @param bForceInHand
  */
-export function giveWeaponToPed(ped: number, weaponHash: number, ammoCount: number, isHidden: boolean, bForceInHand: boolean): any { 
+export function giveWeaponToPed(ped: number, weaponHash: number, ammoCount: number, isHidden: boolean, bForceInHand: boolean): void { 
 	return _in(0x00000000, 0xc4d88a85, ped, weaponHash, ammoCount, isHidden, bForceInHand); 
 }
 
@@ -1163,7 +1163,7 @@ export function isVehicleTyreBurst(vehicle: number, wheelID: number, completely:
  * Requests the commerce data for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
  * @param playerSrc
  */
-export function loadPlayerCommerceData(playerSrc: string): any { 
+export function loadPlayerCommerceData(playerSrc: string): void { 
 	return _in(0x00000000, 0xa8f63eab, _ts(playerSrc)); 
 }
 
@@ -1171,7 +1171,7 @@ export function loadPlayerCommerceData(playerSrc: string): any {
  * Requests the commerce data from Tebex for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
  * @param playerSrc
  */
-export function loadPlayerCommerceDataExt(playerSrc: string): any { 
+export function loadPlayerCommerceDataExt(playerSrc: string): void { 
 	return _in(0x00000000, 0x7995539e, _ts(playerSrc)); 
 }
 
@@ -1179,7 +1179,7 @@ export function loadPlayerCommerceDataExt(playerSrc: string): any {
  * Create a permanent voice channel.
  * @param id
  */
-export function mumbleCreateChannel(id: number): any { 
+export function mumbleCreateChannel(id: number): void { 
 	return _in(0x00000000, 0x262663c5, id); 
 }
 
@@ -1196,7 +1196,7 @@ export function mumbleIsPlayerMuted(playerSrc: number): boolean {
  * @param playerSrc
  * @param toggle
  */
-export function mumbleSetPlayerMuted(playerSrc: number, toggle: boolean): any { 
+export function mumbleSetPlayerMuted(playerSrc: number, toggle: boolean): void { 
 	return _in(0x00000000, 0xcc6c2eb1, playerSrc, toggle); 
 }
 
@@ -1224,7 +1224,7 @@ export function performHttpRequestInternal(requestData: string, requestDataLengt
 	return _in(0x00000000, 0x8e8cc653, _ts(requestData), requestDataLength, _r, _ri); 
 }
 
-export function performHttpRequestInternalEx(requestData: number): number { 
+export function performHttpRequestInternalEx(requestData: any): number { 
 	return _in(0x00000000, 0x6b171e87, requestData, _r, _ri); 
 }
 
@@ -1233,7 +1233,7 @@ export function performHttpRequestInternalEx(requestData: number): number {
  * server monitoring utilities.
  * @param jsonString
  */
-export function printStructuredTrace(jsonString: string): any { 
+export function printStructuredTrace(jsonString: string): void { 
 	return _in(0x00000000, 0x90892ded, _ts(jsonString)); 
 }
 
@@ -1241,7 +1241,7 @@ export function printStructuredTrace(jsonString: string): any {
  * Registers a listener for console output messages.
  * @param listener
  */
-export function registerConsoleListener(listener: any): any { 
+export function registerConsoleListener(listener: any): void { 
 	return _in(0x00000000, 0x281b5448, _mfr(listener)); 
 }
 
@@ -1273,7 +1273,7 @@ export function registerResourceAsset(resourceName: string, fileName: string): s
  * @param factoryId
  * @param factoryFn
  */
-export function registerResourceBuildTaskFactory(factoryId: string, factoryFn: any): any { 
+export function registerResourceBuildTaskFactory(factoryId: string, factoryFn: any): void { 
 	return _in(0x00000000, 0x285b43ca, _ts(factoryId), _mfr(factoryFn)); 
 }
 
@@ -1285,7 +1285,7 @@ export function registerResourceBuildTaskFactory(factoryId: string, factoryFn: a
  * @param ped
  * @param p1
  */
-export function removeAllPedWeapons(ped: number, p1: boolean): any { 
+export function removeAllPedWeapons(ped: number, p1: boolean): void { 
 	return _in(0x00000000, 0xa44ce817, ped, p1); 
 }
 
@@ -1295,9 +1295,9 @@ export function removeAllPedWeapons(ped: number, p1: boolean): any {
  * **This is the server-side RPC native equivalent of the client native [REMOVE_BLIP](?\_0x86A652570E5F25DD).**
  * @param blip
  */
-export function removeBlip(blip: number): [any, any] { 
-	const [retval, blip_out] = _in(0x00000000, 0xd8c3c1cd, _ii(blip), _r, _ri);
-	return [retval as any, blip_out as number]; 
+export function removeBlip(blip: number): [number] { 
+	const [blip_out] = _in(0x00000000, 0xd8c3c1cd, _ii(blip));
+	return [blip_out as number]; 
 }
 
 /**
@@ -1306,7 +1306,7 @@ export function removeBlip(blip: number): [any, any] {
  * @param weaponHash
  * @param componentHash
  */
-export function removeWeaponComponentFromPed(ped: number, weaponHash: number, componentHash: number): any { 
+export function removeWeaponComponentFromPed(ped: number, weaponHash: number, componentHash: number): void { 
 	return _in(0x00000000, 0x412aa00d, ped, weaponHash, componentHash); 
 }
 
@@ -1324,7 +1324,7 @@ export function removeWeaponComponentFromPed(ped: number, weaponHash: number, co
  * @param ped
  * @param weaponHash
  */
-export function removeWeaponFromPed(ped: number, weaponHash: number): any { 
+export function removeWeaponFromPed(ped: number, weaponHash: number): void { 
 	return _in(0x00000000, 0x9c37f220, ped, weaponHash); 
 }
 
@@ -1334,7 +1334,7 @@ export function removeWeaponFromPed(ped: number, weaponHash: number): any {
  * @param playerSrc
  * @param skuId
  */
-export function requestPlayerCommerceSession(playerSrc: string, skuId: number): any { 
+export function requestPlayerCommerceSession(playerSrc: string, skuId: number): void { 
 	return _in(0x00000000, 0x96f93cce, _ts(playerSrc), skuId); 
 }
 
@@ -1356,7 +1356,7 @@ export function saveResourceFile(resourceName: string, fileName: string, data: s
  * @param rootPath
  * @param callback
  */
-export function scanResourceRoot(rootPath: string, callback: any): any { 
+export function scanResourceRoot(rootPath: string, callback: any): void { 
 	return _in(0x00000000, 0x636f097f, _ts(rootPath), _mfr(callback)); 
 }
 
@@ -1364,7 +1364,7 @@ export function scanResourceRoot(rootPath: string, callback: any): any {
  * Schedules the specified resource to run a tick as soon as possible, bypassing the server's fixed tick rate.
  * @param resourceName
  */
-export function scheduleResourceTick(resourceName: string): any { 
+export function scheduleResourceTick(resourceName: string): void { 
 	return _in(0x00000000, 0xb88a73ad, _ts(resourceName)); 
 }
 
@@ -1380,11 +1380,11 @@ export function scheduleResourceTick(resourceName: string): any {
  * @param blip
  * @param spriteId
  */
-export function setBlipSprite(blip: number, spriteId: number): any { 
+export function setBlipSprite(blip: number, spriteId: number): void { 
 	return _in(0x00000000, 0x8dbbb0b9, blip, spriteId); 
 }
 
-export function setConvar(varName: string, value: string): any { 
+export function setConvar(varName: string, value: string): void { 
 	return _in(0x00000000, 0x341b16d2, _ts(varName), _ts(value)); 
 }
 
@@ -1393,11 +1393,11 @@ export function setConvar(varName: string, value: string): any {
  * @param varName
  * @param value
  */
-export function setConvarReplicated(varName: string, value: string): any { 
+export function setConvarReplicated(varName: string, value: string): void { 
 	return _in(0x00000000, 0xf292858c, _ts(varName), _ts(value)); 
 }
 
-export function setConvarServerInfo(varName: string, value: string): any { 
+export function setConvarServerInfo(varName: string, value: string): void { 
 	return _in(0x00000000, 0x9338d547, _ts(varName), _ts(value)); 
 }
 
@@ -1407,7 +1407,7 @@ export function setConvarServerInfo(varName: string, value: string): any {
  * @param weaponHash
  * @param bForceInHand
  */
-export function setCurrentPedWeapon(ped: number, weaponHash: number, bForceInHand: boolean): any { 
+export function setCurrentPedWeapon(ped: number, weaponHash: number, bForceInHand: boolean): void { 
 	return _in(0x00000000, 0xb8278882, ped, weaponHash, bForceInHand); 
 }
 
@@ -1424,7 +1424,7 @@ export function setCurrentPedWeapon(ped: number, weaponHash: number, bForceInHan
  * @param ragdollFlag
  * @param clearArea
  */
-export function setEntityCoords(entity: number, xPos: number, yPos: number, zPos: number, alive: boolean, deadFlag: boolean, ragdollFlag: boolean, clearArea: boolean): any { 
+export function setEntityCoords(entity: number, xPos: number, yPos: number, zPos: number, alive: boolean, deadFlag: boolean, ragdollFlag: boolean, clearArea: boolean): void { 
 	return _in(0x00000000, 0xdf70b41b, entity, _fv(xPos), _fv(yPos), _fv(zPos), alive, deadFlag, ragdollFlag, clearArea); 
 }
 
@@ -1434,7 +1434,7 @@ export function setEntityCoords(entity: number, xPos: number, yPos: number, zPos
  * @param entity
  * @param radius
  */
-export function setEntityDistanceCullingRadius(entity: number, radius: number): any { 
+export function setEntityDistanceCullingRadius(entity: number, radius: number): void { 
 	return _in(0x00000000, 0xd3a183a3, entity, _fv(radius)); 
 }
 
@@ -1445,7 +1445,7 @@ export function setEntityDistanceCullingRadius(entity: number, radius: number): 
  * @param entity
  * @param heading
  */
-export function setEntityHeading(entity: number, heading: number): any { 
+export function setEntityHeading(entity: number, heading: number): void { 
 	return _in(0x00000000, 0xe0ff064d, entity, _fv(heading)); 
 }
 
@@ -1458,7 +1458,7 @@ export function setEntityHeading(entity: number, heading: number): any {
  * @param rotationOrder
  * @param p5
  */
-export function setEntityRotation(entity: number, pitch: number, roll: number, yaw: number, rotationOrder: number, p5: boolean): any { 
+export function setEntityRotation(entity: number, pitch: number, roll: number, yaw: number, rotationOrder: number, p5: boolean): void { 
 	return _in(0x00000000, 0x0a345efe, entity, _fv(pitch), _fv(roll), _fv(yaw), rotationOrder, p5); 
 }
 
@@ -1469,7 +1469,7 @@ export function setEntityRotation(entity: number, pitch: number, roll: number, y
  * @param entity
  * @param bucket
  */
-export function setEntityRoutingBucket(entity: number, bucket: number): any { 
+export function setEntityRoutingBucket(entity: number, bucket: number): void { 
 	return _in(0x00000000, 0x635e5289, entity, bucket); 
 }
 
@@ -1482,19 +1482,19 @@ export function setEntityRoutingBucket(entity: number, bucket: number): any {
  * @param y
  * @param z
  */
-export function setEntityVelocity(entity: number, x: number, y: number, z: number): any { 
+export function setEntityVelocity(entity: number, x: number, y: number, z: number): void { 
 	return _in(0x00000000, 0xff5a1988, entity, _fv(x), _fv(y), _fv(z)); 
 }
 
-export function setGameType(gametypeName: string): any { 
+export function setGameType(gametypeName: string): void { 
 	return _in(0x00000000, 0xf90b7469, _ts(gametypeName)); 
 }
 
-export function setHttpHandler(handler: any): any { 
+export function setHttpHandler(handler: any): void { 
 	return _in(0x00000000, 0xf5c6330c, _mfr(handler)); 
 }
 
-export function setMapName(mapName: string): any { 
+export function setMapName(mapName: string): void { 
 	return _in(0x00000000, 0xb7ba82dc, _ts(mapName)); 
 }
 
@@ -1506,7 +1506,7 @@ export function setMapName(mapName: string): any {
  * @param weaponHash
  * @param ammo
  */
-export function setPedAmmo(ped: number, weaponHash: number, ammo: number): any { 
+export function setPedAmmo(ped: number, weaponHash: number, ammo: number): void { 
 	return _in(0x00000000, 0xbf90df1a, ped, weaponHash, ammo); 
 }
 
@@ -1519,7 +1519,7 @@ export function setPedAmmo(ped: number, weaponHash: number, ammo: number): any {
  * @param ped
  * @param amount
  */
-export function setPedArmour(ped: number, amount: number): any { 
+export function setPedArmour(ped: number, amount: number): void { 
 	return _in(0x00000000, 0x4e3a0cc4, ped, amount); 
 }
 
@@ -1528,7 +1528,7 @@ export function setPedArmour(ped: number, amount: number): any {
  * @param ped
  * @param toggle
  */
-export function setPedCanRagdoll(ped: number, toggle: boolean): any { 
+export function setPedCanRagdoll(ped: number, toggle: boolean): void { 
 	return _in(0x00000000, 0xcf1384c4, ped, toggle); 
 }
 
@@ -1563,7 +1563,7 @@ export function setPedCanRagdoll(ped: number, toggle: boolean): any {
  * @param textureId
  * @param paletteId
  */
-export function setPedComponentVariation(ped: number, componentId: number, drawableId: number, textureId: number, paletteId: number): any { 
+export function setPedComponentVariation(ped: number, componentId: number, drawableId: number, textureId: number, paletteId: number): void { 
 	return _in(0x00000000, 0xd4f7b05c, ped, componentId, drawableId, textureId, paletteId); 
 }
 
@@ -2036,7 +2036,7 @@ export function setPedComponentVariation(ped: number, componentId: number, drawa
  * @param flagId
  * @param value
  */
-export function setPedConfigFlag(ped: number, flagId: number, value: boolean): any { 
+export function setPedConfigFlag(ped: number, flagId: number, value: boolean): void { 
 	return _in(0x00000000, 0x9cfbe10d, ped, flagId, value); 
 }
 
@@ -2046,7 +2046,7 @@ export function setPedConfigFlag(ped: number, flagId: number, value: boolean): a
  * **This is the server-side RPC native equivalent of the client native [SET_PED_DEFAULT_COMPONENT_VARIATION](?\_0x45EEE61580806D63).**
  * @param ped
  */
-export function setPedDefaultComponentVariation(ped: number): any { 
+export function setPedDefaultComponentVariation(ped: number): void { 
 	return _in(0x00000000, 0xc866a984, ped); 
 }
 
@@ -2089,7 +2089,7 @@ export function setPedDefaultComponentVariation(ped: number): any {
  * @param ped
  * @param index
  */
-export function setPedEyeColor(ped: number, index: number): any { 
+export function setPedEyeColor(ped: number, index: number): void { 
 	return _in(0x00000000, 0xec09db1b, ped, index); 
 }
 
@@ -2126,7 +2126,7 @@ export function setPedEyeColor(ped: number, index: number): any {
  * @param index
  * @param scale
  */
-export function setPedFaceFeature(ped: number, index: number, scale: number): any { 
+export function setPedFaceFeature(ped: number, index: number, scale: number): void { 
 	return _in(0x00000000, 0x6c8d4458, ped, index, _fv(scale)); 
 }
 
@@ -2138,7 +2138,7 @@ export function setPedFaceFeature(ped: number, index: number, scale: number): an
  * @param colorID
  * @param highlightColorID
  */
-export function setPedHairColor(ped: number, colorID: number, highlightColorID: number): any { 
+export function setPedHairColor(ped: number, colorID: number, highlightColorID: number): void { 
 	return _in(0x00000000, 0xbb43f090, ped, colorID, highlightColorID); 
 }
 
@@ -2166,7 +2166,7 @@ export function setPedHairColor(ped: number, colorID: number, highlightColorID: 
  * @param thirdMix
  * @param isParent
  */
-export function setPedHeadBlendData(ped: number, shapeFirstID: number, shapeSecondID: number, shapeThirdID: number, skinFirstID: number, skinSecondID: number, skinThirdID: number, shapeMix: number, skinMix: number, thirdMix: number, isParent: boolean): any { 
+export function setPedHeadBlendData(ped: number, shapeFirstID: number, shapeSecondID: number, shapeThirdID: number, skinFirstID: number, skinSecondID: number, skinThirdID: number, shapeMix: number, skinMix: number, thirdMix: number, isParent: boolean): void { 
 	return _in(0x00000000, 0x60746b88, ped, shapeFirstID, shapeSecondID, shapeThirdID, skinFirstID, skinSecondID, skinThirdID, _fv(shapeMix), _fv(skinMix), _fv(thirdMix), isParent); 
 }
 
@@ -2198,7 +2198,7 @@ export function setPedHeadBlendData(ped: number, shapeFirstID: number, shapeSeco
  * @param index
  * @param opacity
  */
-export function setPedHeadOverlay(ped: number, overlayID: number, index: number, opacity: number): any { 
+export function setPedHeadOverlay(ped: number, overlayID: number, index: number, opacity: number): void { 
 	return _in(0x00000000, 0xd28dba90, ped, overlayID, index, _fv(opacity)); 
 }
 
@@ -2218,7 +2218,7 @@ export function setPedHeadOverlay(ped: number, overlayID: number, index: number,
  * @param colorID
  * @param secondColorID
  */
-export function setPedHeadOverlayColor(ped: number, overlayID: number, colorType: number, colorID: number, secondColorID: number): any { 
+export function setPedHeadOverlayColor(ped: number, overlayID: number, colorType: number, colorID: number, secondColorID: number): void { 
 	return _in(0x00000000, 0x78935a27, ped, overlayID, colorType, colorID, secondColorID); 
 }
 
@@ -2228,7 +2228,7 @@ export function setPedHeadOverlayColor(ped: number, overlayID: number, colorType
  * @param vehicle
  * @param seatIndex
  */
-export function setPedIntoVehicle(ped: number, vehicle: number, seatIndex: number): any { 
+export function setPedIntoVehicle(ped: number, vehicle: number, seatIndex: number): void { 
 	return _in(0x00000000, 0x07500c79, ped, vehicle, seatIndex); 
 }
 
@@ -2256,7 +2256,7 @@ export function setPedIntoVehicle(ped: number, vehicle: number, seatIndex: numbe
  * @param textureId
  * @param attach
  */
-export function setPedPropIndex(ped: number, componentId: number, drawableId: number, textureId: number, attach: boolean): any { 
+export function setPedPropIndex(ped: number, componentId: number, drawableId: number, textureId: number, attach: boolean): void { 
 	return _in(0x00000000, 0x0829f2e2, ped, componentId, drawableId, textureId, attach); 
 }
 
@@ -2269,7 +2269,7 @@ export function setPedPropIndex(ped: number, componentId: number, drawableId: nu
  * @param ped
  * @param p1
  */
-export function setPedRandomComponentVariation(ped: number, p1: number): any { 
+export function setPedRandomComponentVariation(ped: number, p1: number): void { 
 	return _in(0x00000000, 0x4111ba46, ped, p1); 
 }
 
@@ -2280,7 +2280,7 @@ export function setPedRandomComponentVariation(ped: number, p1: number): any {
  * **This is the server-side RPC native equivalent of the client native [SET_PED_RANDOM_PROPS](?\_0xC44AA05345C992C6).**
  * @param ped
  */
-export function setPedRandomProps(ped: number): any { 
+export function setPedRandomProps(ped: number): void { 
 	return _in(0x00000000, 0xe3318e0e, ped); 
 }
 
@@ -2293,7 +2293,7 @@ export function setPedRandomProps(ped: number): any {
  * @param flagId
  * @param doReset
  */
-export function setPedResetFlag(ped: number, flagId: number, doReset: boolean): any { 
+export function setPedResetFlag(ped: number, flagId: number, doReset: boolean): void { 
 	return _in(0x00000000, 0xcff6ff66, ped, flagId, doReset); 
 }
 
@@ -2315,7 +2315,7 @@ export function setPedResetFlag(ped: number, flagId: number, doReset: boolean): 
  * @param p5
  * @param p6
  */
-export function setPedToRagdoll(ped: number, time1: number, time2: number, ragdollType: number, p4: boolean, p5: boolean, p6: boolean): any { 
+export function setPedToRagdoll(ped: number, time1: number, time2: number, ragdollType: number, p4: boolean, p5: boolean, p6: boolean): void { 
 	return _in(0x00000000, 0x83cb5052, ped, time1, time2, ragdollType, p4, p5, p6); 
 }
 
@@ -2344,7 +2344,7 @@ export function setPedToRagdoll(ped: number, time1: number, time2: number, ragdo
  * @param p12
  * @param p13
  */
-export function setPedToRagdollWithFall(ped: number, time: number, p2: number, ragdollType: number, x: number, y: number, z: number, p7: number, p8: number, p9: number, p10: number, p11: number, p12: number, p13: number): any { 
+export function setPedToRagdollWithFall(ped: number, time: number, p2: number, ragdollType: number, x: number, y: number, z: number, p7: number, p8: number, p9: number, p10: number, p11: number, p12: number, p13: number): void { 
 	return _in(0x00000000, 0xfa12e286, ped, time, p2, ragdollType, _fv(x), _fv(y), _fv(z), _fv(p7), _fv(p8), _fv(p9), _fv(p10), _fv(p11), _fv(p12), _fv(p13)); 
 }
 
@@ -2369,7 +2369,7 @@ export function setPedToRagdollWithFall(ped: number, time: number, p2: number, r
  * @param bHasControl
  * @param flags
  */
-export function setPlayerControl(player: number, bHasControl: boolean, flags: number): any { 
+export function setPlayerControl(player: number, bHasControl: boolean, flags: number): void { 
 	return _in(0x00000000, 0xd17afcd8, player, bHasControl, flags); 
 }
 
@@ -2379,7 +2379,7 @@ export function setPlayerControl(player: number, bHasControl: boolean, flags: nu
  * @param playerSrc
  * @param radius
  */
-export function setPlayerCullingRadius(playerSrc: string, radius: number): any { 
+export function setPlayerCullingRadius(playerSrc: string, radius: number): void { 
 	return _in(0x00000000, 0x8a2fbad4, _ts(playerSrc), _fv(radius)); 
 }
 
@@ -2392,7 +2392,7 @@ export function setPlayerCullingRadius(playerSrc: string, radius: number): any {
  * @param player
  * @param toggle
  */
-export function setPlayerInvincible(player: number, toggle: boolean): any { 
+export function setPlayerInvincible(player: number, toggle: boolean): void { 
 	return _in(0x00000000, 0xdfb9a2a2, player, toggle); 
 }
 
@@ -2404,7 +2404,7 @@ export function setPlayerInvincible(player: number, toggle: boolean): any {
  * @param player
  * @param model
  */
-export function setPlayerModel(player: number, model: number): any { 
+export function setPlayerModel(player: number, model: number): void { 
 	return _in(0x00000000, 0x774a4c54, player, model); 
 }
 
@@ -2415,7 +2415,7 @@ export function setPlayerModel(player: number, model: number): any {
  * @param playerSrc
  * @param bucket
  */
-export function setPlayerRoutingBucket(playerSrc: string, bucket: number): any { 
+export function setPlayerRoutingBucket(playerSrc: string, bucket: number): void { 
 	return _in(0x00000000, 0x6504eb38, _ts(playerSrc), bucket); 
 }
 
@@ -2429,7 +2429,7 @@ export function setPlayerRoutingBucket(playerSrc: string, bucket: number): any {
  * @param wantedLevel
  * @param disableNoMission
  */
-export function setPlayerWantedLevel(player: number, wantedLevel: number, disableNoMission: boolean): any { 
+export function setPlayerWantedLevel(player: number, wantedLevel: number, disableNoMission: boolean): void { 
 	return _in(0x00000000, 0xb7a0914b, player, wantedLevel, disableNoMission); 
 }
 
@@ -2438,7 +2438,7 @@ export function setPlayerWantedLevel(player: number, wantedLevel: number, disabl
  * @param key
  * @param value
  */
-export function setResourceKvpFloatNoSync(key: string, value: number): any { 
+export function setResourceKvpFloatNoSync(key: string, value: number): void { 
 	return _in(0x00000000, 0x3517bfbe, _ts(key), _fv(value)); 
 }
 
@@ -2447,7 +2447,7 @@ export function setResourceKvpFloatNoSync(key: string, value: number): any {
  * @param key
  * @param value
  */
-export function setResourceKvpIntNoSync(key: string, value: number): any { 
+export function setResourceKvpIntNoSync(key: string, value: number): void { 
 	return _in(0x00000000, 0x26aeb707, _ts(key), value); 
 }
 
@@ -2456,7 +2456,7 @@ export function setResourceKvpIntNoSync(key: string, value: number): any {
  * @param key
  * @param value
  */
-export function setResourceKvpNoSync(key: string, value: string): any { 
+export function setResourceKvpNoSync(key: string, value: string): void { 
 	return _in(0x00000000, 0x0cf9a2ff, _ts(key), _ts(value)); 
 }
 
@@ -2473,7 +2473,7 @@ export function setResourceKvpNoSync(key: string, value: string): any {
  * @param bucketId
  * @param mode
  */
-export function setRoutingBucketEntityLockdownMode(bucketId: number, mode: string): any { 
+export function setRoutingBucketEntityLockdownMode(bucketId: number, mode: string): void { 
 	return _in(0x00000000, 0xa0f2201f, bucketId, _ts(mode)); 
 }
 
@@ -2482,7 +2482,7 @@ export function setRoutingBucketEntityLockdownMode(bucketId: number, mode: strin
  * @param bucketId
  * @param mode
  */
-export function setRoutingBucketPopulationEnabled(bucketId: number, mode: boolean): any { 
+export function setRoutingBucketPopulationEnabled(bucketId: number, mode: boolean): void { 
 	return _in(0x00000000, 0xce51ac2c, bucketId, mode); 
 }
 
@@ -2491,7 +2491,7 @@ export function setRoutingBucketPopulationEnabled(bucketId: number, mode: boolea
  * @param vehicle
  * @param state
  */
-export function setVehicleAlarm(vehicle: number, state: boolean): any { 
+export function setVehicleAlarm(vehicle: number, state: boolean): void { 
 	return _in(0x00000000, 0x24877d84, vehicle, state); 
 }
 
@@ -2502,7 +2502,7 @@ export function setVehicleAlarm(vehicle: number, state: boolean): any {
  * @param vehicle
  * @param value
  */
-export function setVehicleBodyHealth(vehicle: number, value: number): any { 
+export function setVehicleBodyHealth(vehicle: number, value: number): void { 
 	return _in(0x00000000, 0x920c2517, vehicle, _fv(value)); 
 }
 
@@ -2514,7 +2514,7 @@ export function setVehicleBodyHealth(vehicle: number, value: number): any {
  * @param vehicle
  * @param colorCombination
  */
-export function setVehicleColourCombination(vehicle: number, colorCombination: number): any { 
+export function setVehicleColourCombination(vehicle: number, colorCombination: number): void { 
 	return _in(0x00000000, 0xa557aead, vehicle, colorCombination); 
 }
 
@@ -2527,7 +2527,7 @@ export function setVehicleColourCombination(vehicle: number, colorCombination: n
  * @param colorPrimary
  * @param colorSecondary
  */
-export function setVehicleColours(vehicle: number, colorPrimary: number, colorSecondary: number): any { 
+export function setVehicleColours(vehicle: number, colorPrimary: number, colorSecondary: number): void { 
 	return _in(0x00000000, 0x57f24253, vehicle, colorPrimary, colorSecondary); 
 }
 
@@ -2540,7 +2540,7 @@ export function setVehicleColours(vehicle: number, colorPrimary: number, colorSe
  * @param g
  * @param b
  */
-export function setVehicleCustomPrimaryColour(vehicle: number, r: number, g: number, b: number): any { 
+export function setVehicleCustomPrimaryColour(vehicle: number, r: number, g: number, b: number): void { 
 	return _in(0x00000000, 0x8df9f9bc, vehicle, r, g, b); 
 }
 
@@ -2553,7 +2553,7 @@ export function setVehicleCustomPrimaryColour(vehicle: number, r: number, g: num
  * @param g
  * @param b
  */
-export function setVehicleCustomSecondaryColour(vehicle: number, r: number, g: number, b: number): any { 
+export function setVehicleCustomSecondaryColour(vehicle: number, r: number, g: number, b: number): void { 
 	return _in(0x00000000, 0x9d77259e, vehicle, r, g, b); 
 }
 
@@ -2564,7 +2564,7 @@ export function setVehicleCustomSecondaryColour(vehicle: number, r: number, g: n
  * @param vehicle
  * @param dirtLevel
  */
-export function setVehicleDirtLevel(vehicle: number, dirtLevel: number): any { 
+export function setVehicleDirtLevel(vehicle: number, dirtLevel: number): void { 
 	return _in(0x00000000, 0x2b39128b, vehicle, _fv(dirtLevel)); 
 }
 
@@ -2576,7 +2576,7 @@ export function setVehicleDirtLevel(vehicle: number, dirtLevel: number): any {
  * @param doorIndex
  * @param deleteDoor
  */
-export function setVehicleDoorBroken(vehicle: number, doorIndex: number, deleteDoor: boolean): any { 
+export function setVehicleDoorBroken(vehicle: number, doorIndex: number, deleteDoor: boolean): void { 
 	return _in(0x00000000, 0x8147fea7, vehicle, doorIndex, deleteDoor); 
 }
 
@@ -2598,7 +2598,7 @@ export function setVehicleDoorBroken(vehicle: number, doorIndex: number, deleteD
  * @param vehicle
  * @param doorLockStatus
  */
-export function setVehicleDoorsLocked(vehicle: number, doorLockStatus: number): any { 
+export function setVehicleDoorsLocked(vehicle: number, doorLockStatus: number): void { 
 	return _in(0x00000000, 0x4cdd35d0, vehicle, doorLockStatus); 
 }
 
@@ -2607,7 +2607,7 @@ export function setVehicleDoorsLocked(vehicle: number, doorLockStatus: number): 
  * @param vehicle
  * @param plateText
  */
-export function setVehicleNumberPlateText(vehicle: number, plateText: string): any { 
+export function setVehicleNumberPlateText(vehicle: number, plateText: string): void { 
 	return _in(0x00000000, 0x400f9556, vehicle, _ts(plateText)); 
 }
 
@@ -2630,7 +2630,7 @@ export function stopResource(resourceName: string): boolean {
  * @param p2
  * @param p3
  */
-export function taskCombatPed(ped: number, targetPed: number, p2: number, p3: number): any { 
+export function taskCombatPed(ped: number, targetPed: number, p2: number, p3: number): void { 
 	return _in(0x00000000, 0xcb0d8932, ped, targetPed, p2, p3); 
 }
 
@@ -2654,7 +2654,7 @@ export function taskCombatPed(ped: number, targetPed: number, p2: number, p3: nu
  * @param p8
  * @param firingPattern
  */
-export function taskDriveBy(driverPed: number, targetPed: number, targetVehicle: number, targetX: number, targetY: number, targetZ: number, distanceToShoot: number, pedAccuracy: number, p8: boolean, firingPattern: number): any { 
+export function taskDriveBy(driverPed: number, targetPed: number, targetVehicle: number, targetX: number, targetY: number, targetZ: number, distanceToShoot: number, pedAccuracy: number, p8: boolean, firingPattern: number): void { 
 	return _in(0x00000000, 0x2b84d1c4, driverPed, targetPed, targetVehicle, _fv(targetX), _fv(targetY), _fv(targetZ), _fv(distanceToShoot), pedAccuracy, p8, firingPattern); 
 }
 
@@ -2672,7 +2672,7 @@ export function taskDriveBy(driverPed: number, targetPed: number, targetVehicle:
  * @param flag
  * @param p6
  */
-export function taskEnterVehicle(ped: number, vehicle: number, timeout: number, seatIndex: number, speed: number, flag: number, p6: any): any { 
+export function taskEnterVehicle(ped: number, vehicle: number, timeout: number, seatIndex: number, speed: number, flag: number, p6: number): void { 
 	return _in(0x00000000, 0xb8689b4e, ped, vehicle, timeout, seatIndex, _fv(speed), flag, p6); 
 }
 
@@ -2680,7 +2680,7 @@ export function taskEnterVehicle(ped: number, vehicle: number, timeout: number, 
  * **This is the server-side RPC native equivalent of the client native [TASK_EVERYONE_LEAVE_VEHICLE](?\_0x7F93691AB4B92272).**
  * @param vehicle
  */
-export function taskEveryoneLeaveVehicle(vehicle: number): any { 
+export function taskEveryoneLeaveVehicle(vehicle: number): void { 
 	return _in(0x00000000, 0xc1971f30, vehicle); 
 }
 
@@ -2695,7 +2695,7 @@ export function taskEveryoneLeaveVehicle(vehicle: number): any {
  * @param targetHeading
  * @param distanceToSlide
  */
-export function taskGoStraightToCoord(ped: number, x: number, y: number, z: number, speed: number, timeout: number, targetHeading: number, distanceToSlide: number): any { 
+export function taskGoStraightToCoord(ped: number, x: number, y: number, z: number, speed: number, timeout: number, targetHeading: number, distanceToSlide: number): void { 
 	return _in(0x00000000, 0x80a9e7a7, ped, _fv(x), _fv(y), _fv(z), _fv(speed), timeout, _fv(targetHeading), _fv(distanceToSlide)); 
 }
 
@@ -2714,7 +2714,7 @@ export function taskGoStraightToCoord(ped: number, x: number, y: number, z: numb
  * @param walkingStyle
  * @param p8
  */
-export function taskGoToCoordAnyMeans(ped: number, x: number, y: number, z: number, speed: number, p5: any, p6: boolean, walkingStyle: number, p8: number): any { 
+export function taskGoToCoordAnyMeans(ped: number, x: number, y: number, z: number, speed: number, p5: number, p6: boolean, walkingStyle: number, p8: number): void { 
 	return _in(0x00000000, 0xf91df93b, ped, _fv(x), _fv(y), _fv(z), _fv(speed), p5, p6, walkingStyle, _fv(p8)); 
 }
 
@@ -2733,7 +2733,7 @@ export function taskGoToCoordAnyMeans(ped: number, x: number, y: number, z: numb
  * @param p5
  * @param p6
  */
-export function taskGoToEntity(entity: number, target: number, duration: number, distance: number, speed: number, p5: number, p6: number): any { 
+export function taskGoToEntity(entity: number, target: number, duration: number, distance: number, speed: number, p5: number, p6: number): void { 
 	return _in(0x00000000, 0x374827c2, entity, target, duration, _fv(distance), _fv(speed), _fv(p5), p6); 
 }
 
@@ -2749,7 +2749,7 @@ export function taskGoToEntity(entity: number, target: number, duration: number,
  * @param p3
  * @param p4
  */
-export function taskHandsUp(ped: number, duration: number, facingPed: number, p3: number, p4: boolean): any { 
+export function taskHandsUp(ped: number, duration: number, facingPed: number, p3: number, p4: boolean): void { 
 	return _in(0x00000000, 0x8dcc19c5, ped, duration, facingPed, p3, p4); 
 }
 
@@ -2761,7 +2761,7 @@ export function taskHandsUp(ped: number, duration: number, facingPed: number, p3
  * @param p1
  * @param flags
  */
-export function taskLeaveAnyVehicle(ped: number, p1: number, flags: number): any { 
+export function taskLeaveAnyVehicle(ped: number, p1: number, flags: number): void { 
 	return _in(0x00000000, 0xdbdd79fa, ped, p1, flags); 
 }
 
@@ -2781,7 +2781,7 @@ export function taskLeaveAnyVehicle(ped: number, p1: number, flags: number): any
  * @param vehicle
  * @param flags
  */
-export function taskLeaveVehicle(ped: number, vehicle: number, flags: number): any { 
+export function taskLeaveVehicle(ped: number, vehicle: number, flags: number): void { 
 	return _in(0x00000000, 0x7b1141c6, ped, vehicle, flags); 
 }
 
@@ -2849,7 +2849,7 @@ export function taskLeaveVehicle(ped: number, vehicle: number, flags: number): a
  * @param lockY
  * @param lockZ
  */
-export function taskPlayAnim(ped: number, animDictionary: string, animationName: string, blendInSpeed: number, blendOutSpeed: number, duration: number, flag: number, playbackRate: number, lockX: boolean, lockY: boolean, lockZ: boolean): any { 
+export function taskPlayAnim(ped: number, animDictionary: string, animationName: string, blendInSpeed: number, blendOutSpeed: number, duration: number, flag: number, playbackRate: number, lockX: boolean, lockY: boolean, lockZ: boolean): void { 
 	return _in(0x00000000, 0x5ab552c6, ped, _ts(animDictionary), _ts(animationName), _fv(blendInSpeed), _fv(blendOutSpeed), duration, flag, _fv(playbackRate), lockX, lockY, lockZ); 
 }
 
@@ -2875,7 +2875,7 @@ export function taskPlayAnim(ped: number, animDictionary: string, animationName:
  * @param p14
  * @param p15
  */
-export function taskPlayAnimAdvanced(ped: number, animDict: string, animName: string, posX: number, posY: number, posZ: number, rotX: number, rotY: number, rotZ: number, animEnterSpeed: number, animExitSpeed: number, duration: number, flag: any, animTime: number, p14: any, p15: any): any { 
+export function taskPlayAnimAdvanced(ped: number, animDict: string, animName: string, posX: number, posY: number, posZ: number, rotX: number, rotY: number, rotZ: number, animEnterSpeed: number, animExitSpeed: number, duration: number, flag: number, animTime: number, p14: number, p15: number): void { 
 	return _in(0x00000000, 0x3ddeb0e6, ped, _ts(animDict), _ts(animName), _fv(posX), _fv(posY), _fv(posZ), _fv(rotX), _fv(rotY), _fv(rotZ), _fv(animEnterSpeed), _fv(animExitSpeed), duration, flag, _fv(animTime), p14, p15); 
 }
 
@@ -2884,7 +2884,7 @@ export function taskPlayAnimAdvanced(ped: number, animDict: string, animName: st
  * @param ped
  * @param fleeTarget
  */
-export function taskReactAndFleePed(ped: number, fleeTarget: number): any { 
+export function taskReactAndFleePed(ped: number, fleeTarget: number): void { 
 	return _in(0x00000000, 0x8a632bd8, ped, fleeTarget); 
 }
 
@@ -2899,7 +2899,7 @@ export function taskReactAndFleePed(ped: number, fleeTarget: number): any {
  * @param duration
  * @param firingPattern
  */
-export function taskShootAtCoord(ped: number, x: number, y: number, z: number, duration: number, firingPattern: number): any { 
+export function taskShootAtCoord(ped: number, x: number, y: number, z: number, duration: number, firingPattern: number): void { 
 	return _in(0x00000000, 0x601c22e3, ped, _fv(x), _fv(y), _fv(z), duration, firingPattern); 
 }
 
@@ -2919,7 +2919,7 @@ export function taskShootAtCoord(ped: number, x: number, y: number, z: number, d
  * @param duration
  * @param firingPattern
  */
-export function taskShootAtEntity(entity: number, target: number, duration: number, firingPattern: number): any { 
+export function taskShootAtEntity(entity: number, target: number, duration: number, firingPattern: number): void { 
 	return _in(0x00000000, 0xac0631c9, entity, target, duration, firingPattern); 
 }
 
@@ -2929,11 +2929,11 @@ export function taskShootAtEntity(entity: number, target: number, duration: numb
  * @param vehicle
  * @param seatIndex
  */
-export function taskWarpPedIntoVehicle(ped: number, vehicle: number, seatIndex: number): any { 
+export function taskWarpPedIntoVehicle(ped: number, vehicle: number, seatIndex: number): void { 
 	return _in(0x00000000, 0x65d4a35d, ped, vehicle, seatIndex); 
 }
 
-export function tempBanPlayer(playerSrc: string, reason: string): any { 
+export function tempBanPlayer(playerSrc: string, reason: string): void { 
 	return _in(0x00000000, 0x1e35dbba, _ts(playerSrc), _ts(reason)); 
 }
 
@@ -2944,7 +2944,7 @@ export function tempBanPlayer(playerSrc: string, reason: string): any {
  * @param eventPayload
  * @param payloadLength
  */
-export function triggerClientEventInternal(eventName: string, eventTarget: string, eventPayload: string, payloadLength: number): any { 
+export function triggerClientEventInternal(eventName: string, eventTarget: string, eventPayload: string, payloadLength: number): void { 
 	return _in(0x00000000, 0x2f7a49e6, _ts(eventName), _ts(eventTarget), _ts(eventPayload), payloadLength); 
 }
 
@@ -2956,7 +2956,7 @@ export function triggerClientEventInternal(eventName: string, eventTarget: strin
  * @param payloadLength
  * @param bps
  */
-export function triggerLatentClientEventInternal(eventName: string, eventTarget: string, eventPayload: string, payloadLength: number, bps: number): any { 
+export function triggerLatentClientEventInternal(eventName: string, eventTarget: string, eventPayload: string, payloadLength: number, bps: number): void { 
 	return _in(0x00000000, 0x70b35890, _ts(eventName), _ts(eventTarget), _ts(eventPayload), payloadLength, bps); 
 }
 
