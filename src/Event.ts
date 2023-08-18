@@ -1,6 +1,6 @@
-import { Event as SharedEvent } from "@cfx/shared";
-import { Citizen } from "@cfx/shared";
-import cfx from "@cfx/shared";
+import { Event as SharedEvent } from "cfx-shared";
+import { Citizen } from "cfx-shared";
+import cfx from "cfx-shared";
 type clientListenerType = (source: number, ...args: any[]) => void;
 
 export interface EventContext {
@@ -25,7 +25,7 @@ export interface EventContext {
 
 export class Event extends SharedEvent {
 	public static onClient(eventName: string, listener: clientListenerType, once = false): SharedEvent {
-		const handler = (source: number, ...args: any[]) => {
+		const handler = (...args: any[]) => {
 			listener(source, ...this.getClassFromArguments(...args));
 		};
 		return new SharedEvent(eventName, handler, true, once);
