@@ -1,6 +1,6 @@
-import { Event as SharedEvent } from "cfx-shared";
-import { Citizen } from "cfx-shared";
-import cfx from "cfx-shared";
+import { Citizen, Event as SharedEvent } from "cfx-shared";
+import * as cfx from "cfx-shared";
+
 type clientListenerType = (source: number, ...args: any[]) => void;
 
 namespace ServerEventContext {
