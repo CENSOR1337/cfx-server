@@ -389,7 +389,7 @@ export function deleteResourceKvpNoSync(key: string): void {
 	return _in(0x00000000, 0x04152c90, _ts(key)); 
 }
 
-export function doesEntityExist(entity: any): boolean { 
+export function doesEntityExist(entity: number): boolean { 
 	return _in(0x00000000, 0x3ac90869, entity, _r); 
 }
 
@@ -909,9 +909,8 @@ export function getVehicleCustomSecondaryColour(vehicle: number): [number, numbe
 	return [r_out as number, g_out as number, b_out as number]; 
 }
 
-export function getVehicleDashboardColour(vehicle: number, color: number): [number] { 
-	const [color_out] = _in(0x00000000, 0xa0dbd08d, vehicle, _ii(color));
-	return [color_out as number]; 
+export function getVehicleDashboardColour(vehicle: number, color: number): number { 
+	return _in(0x00000000, 0xa0dbd08d, vehicle, _ii(color)); 
 }
 
 export function getVehicleDirtLevel(vehicle: number): number { 
@@ -981,9 +980,8 @@ export function getVehicleHomingLockonState(vehicle: number): number {
 	return _in(0x00000000, 0xfbde9fd8, vehicle, _r, _ri); 
 }
 
-export function getVehicleInteriorColour(vehicle: number, color: number): [number] { 
-	const [color_out] = _in(0x00000000, 0xccff3b6e, vehicle, _ii(color));
-	return [color_out as number]; 
+export function getVehicleInteriorColour(vehicle: number, color: number): number { 
+	return _in(0x00000000, 0xccff3b6e, vehicle, _ii(color)); 
 }
 
 export function getVehicleLightsState(vehicle: number): [boolean, boolean, boolean] { 
@@ -1225,7 +1223,7 @@ export function performHttpRequestInternal(requestData: string, requestDataLengt
 }
 
 export function performHttpRequestInternalEx(requestData: any): number { 
-	return _in(0x00000000, 0x6b171e87, requestData, _r, _ri); 
+	return _in(0x00000000, 0x6b171e87, ...(_obj(requestData), _r, _ri); 
 }
 
 /**
@@ -1295,9 +1293,8 @@ export function removeAllPedWeapons(ped: number, p1: boolean): void {
  * **This is the server-side RPC native equivalent of the client native [REMOVE_BLIP](?\_0x86A652570E5F25DD).**
  * @param blip
  */
-export function removeBlip(blip: number): [number] { 
-	const [blip_out] = _in(0x00000000, 0xd8c3c1cd, _ii(blip));
-	return [blip_out as number]; 
+export function removeBlip(blip: number): number { 
+	return _in(0x00000000, 0xd8c3c1cd, _ii(blip)); 
 }
 
 /**
