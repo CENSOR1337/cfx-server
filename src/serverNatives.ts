@@ -1223,7 +1223,7 @@ export function performHttpRequestInternal(requestData: string, requestDataLengt
 }
 
 export function performHttpRequestInternalEx(requestData: any): number { 
-	return _in(0x00000000, 0x6b171e87, ...(_obj(requestData), _r, _ri); 
+	return _in(0x00000000, 0x6b171e87, ...(_obj(requestData)), _r, _ri); 
 }
 
 /**
