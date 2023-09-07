@@ -55,6 +55,11 @@ function _ch(hash: any) {
 	return hash;
 }
 
+function _obj(obj: any) {
+	const s = msgpack_pack(obj);
+	return [s, s.length];
+}
+
 function _ts(num: any) {
 	if (num === 0 || num === null || num === undefined || num === false) {
 		// workaround for users calling string parameters with '0', also nil being translated
@@ -78,6 +83,7 @@ function _mfr(fn: any) {
 function _mv(vector: any): Vector3 {
 	return Vector3.fromArray(vector);
 }
+
 /**
  * Adds a rectangular blip for the specified coordinates/area.
  * It is recommended to use [SET_BLIP_ROTATION](#\_0xF87683CDF73C3F6E) and [SET_BLIP_COLOUR](#\_0x03D7FB09E75D6B7E) to make the blip not rotate along with the camera.
