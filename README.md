@@ -1,22 +1,7 @@
-# cfx-server
+# This repo is now archived
 
-improve your scripting quality of life.
-```ts
-import * as cfx from "cfx-server";
+## please visit related repo:
 
-cfx.ServerEvent.playerJoining((data: cfx.ServerEventContext.playerJoining) => {
-	console.log("onPlayerJoining", data);
-});
-
-cfx.ServerEvent.playerDropped((data: cfx.ServerEventContext.playerDropped) => {
-	console.log("onPlayerDropped", data.source, data.reason);
-});
-
-cfx.Event.onClient("testEvent", (source: number, str: string) => {
-	console.log("testEvent", source, str);
-});
-
-cfx.ServerEvent.explosionEvent((data: cfx.ServerEventContext.explosionEvent) => {
-	return false;
-});
-```
+- [@censor1337/cfx-core](https://github.com/CENSOR1337/cfx-core-js)
+- [@censor1337/cfx-api](https://github.com/CENSOR1337/cfx-api-js)
+- [@censor1337/cslib](https://github.com/CENSOR1337/cfx-cslib-js)
